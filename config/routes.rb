@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'users/new'
 
-  root 'entertainment_item#index'
+  root 'users#new'
+  
+  resources :users
 end
