@@ -1,0 +1,2 @@
+module EntertainmentItemHelper
+end

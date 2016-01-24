@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @entertainment_items = @user.entertainment_items.rank(:row_order)
   end
   
   def new

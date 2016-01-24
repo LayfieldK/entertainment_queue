@@ -6,6 +6,37 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+      
+      
     </section>
   </aside>
+</div>
+<%= link_to 'new item', new_item_path() %>
+<div class="panel panel-default">
+  <table class="table table-bordered table-striped" id="sortable">
+    <thead>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          Description
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @entertainment_items.each do |entertainment_item| %>
+        <tr data-item-id=<%= "#{entertainment_item.id}" %> class="item">
+          <td>
+            <%= entertainment_item.name %>
+          </td>
+          <td>
+            <%= entertainment_item.row_order %>
+          
+            <%= link_to 'show', entertainment_item_path(entertainment_item), :class => 'btn btn-default pull-right' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

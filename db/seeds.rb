@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+entertainment_item_types = EntertainmentItemType.create([{name: 'Movie'},{name: 'TV'},{name: 'Book'},{name: 'Video Game'}])
+
+
