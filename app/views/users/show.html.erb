@@ -11,28 +11,38 @@
     </section>
   </aside>
 </div>
-<%= link_to 'new item', new_item_path() %>
+<%= link_to 'new item', new_item_path %>
 <div class="panel panel-default">
-  <table class="table table-bordered table-striped" id="sortable">
+  <table class="queue table table-hover" id="sortable">
     <thead>
       <tr>
-        <th>
-          Name
+        <th class="index">
+          #
         </th>
-        <th>
+        <th class="title">
+          Title
+        </th>
+        <th class="description">
           Description
+        </th>
+        <th class="showbutton">
+          &nbsp;
         </th>
       </tr>
     </thead>
     <tbody>
       <% @entertainment_items.each do |entertainment_item| %>
-        <tr data-item-id=<%= "#{entertainment_item.id}" %> class="item">
+        <tr data-item-id=<%= "#{entertainment_item.id}" %> class="item <%= entertainment_item.entertainment_item_type.css_class %>">
+          <td>
+            2
+          </td>
           <td>
             <%= entertainment_item.name %>
           </td>
           <td>
             <%= entertainment_item.row_order %>
-          
+          </td>
+          <td>
             <%= link_to 'show', entertainment_item_path(entertainment_item), :class => 'btn btn-default pull-right' %>
           </td>
         </tr>

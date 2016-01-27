@@ -31,10 +31,10 @@ class EntertainmentItemsController < ApplicationController
       @entertainment_item = EntertainmentItem.find(params[:id])
     end
     def entertainment_item_params
-      if (params[:entertainment_item].has_key?(:entertainment_item_type_id))
-        params[:entertainment_item][:entertainment_item_type] = EntertainmentItemType.find(params[:entertainment_item][:entertainment_item_type_id])
-      end
-      params.require(:entertainment_item).permit(:entertainment_item_id, :name, :description, :row_order_position, :entertainment_item_type, :user)
+      #if (params[:entertainment_item].has_key?(:entertainment_item_type_id))
+      #  params[:entertainment_item][:entertainment_item_type] = EntertainmentItemType.find(params[:entertainment_item][:entertainment_item_type_id])
+      #end
+      params.require(:entertainment_item).permit(:entertainment_item_id, :name, :description, :row_order_position, :entertainment_item_type_id, :user)
       
    end
 end

@@ -5,6 +5,6 @@ class EntertainmentItemType < ActiveRecord::Migration
   
         t.timestamps null: false
       end
-    add_reference :entertainment_items, :entertainment_item_types, index: true
+    add_reference :entertainment_items, :entertainment_item_type, index: true, foreign_key: true
   end
 end
