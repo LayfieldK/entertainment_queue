@@ -12,41 +12,14 @@
   </aside>
 </div>
 <%= link_to 'new item', new_item_path %>
-<div class="panel panel-default">
-  <table class="queue table table-hover" id="sortable">
-    <thead>
-      <tr>
-        <th class="index">
-          #
-        </th>
-        <th class="title">
-          Title
-        </th>
-        <th class="description">
-          Description
-        </th>
-        <th class="showbutton">
-          &nbsp;
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @entertainment_items.each do |entertainment_item| %>
-        <tr data-item-id=<%= "#{entertainment_item.id}" %> class="item <%= entertainment_item.entertainment_item_type.css_class %>">
-          <td>
-            2
-          </td>
-          <td>
-            <%= entertainment_item.name %>
-          </td>
-          <td>
-            <%= entertainment_item.row_order %>
-          </td>
-          <td>
-            <%= link_to 'show', entertainment_item_path(entertainment_item), :class => 'btn btn-default pull-right' %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+
+  <div class="row grid span8">
+    <% @entertainment_items.each_with_index do |entertainment_item, index| %>
+      <div  data-item-id=<%= "#{entertainment_item.id}" %>  class="well span2 tile <%= entertainment_item.entertainment_item_type.css_class %>">
+        <div><h3><span id="test<%= index + 1 %>" class="index"><%= index + 1 %></span><%= entertainment_item.name %></h3></div>
+        <div><%= entertainment_item.description %></div>
+      </div>
+    <% end %>
+  </div>
+  
+  
