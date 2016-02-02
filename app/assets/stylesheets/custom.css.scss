@@ -21,6 +21,10 @@ section {
   overflow: auto;
 }
 
+.container{
+  magin:auto;
+}
+
 textarea {
   resize: vertical;
 }
@@ -314,3 +318,75 @@ span.picture {
 .grid {
     margin-top: 1em;
 }
+
+h3 {
+   margin-top:0px; 
+}
+
+.videogame{
+  background-color:#fd8181;
+}
+.videogame:hover{
+  background-color:#e37474;
+}
+.videogame:active,.videogame.active{
+  background-color:#ca6767;
+}
+
+
+.movie{
+  background-color:#ffb347;
+}
+.movie:hover{
+  background-color:#e5a13f;
+}
+.movie:active,.movie.active{
+  background-color:#cc8f38;
+}
+
+
+.tv{
+  background-color:#feff99;
+}
+.tv:hover{
+  background-color:#e4e589;
+}
+.tv:active,.tv.active{
+  background-color:#cbcc7a;
+}
+
+.music{
+  background-color:#B4CFEC	;
+}
+.music:hover{
+  background-color:#a2bad4;
+}
+.music:active,.music.active{
+  background-color:#90a5bc;
+}
+
+.book{
+  background-color:#a88eea;
+}
+.book:hover{
+  background-color:#977fd2;
+}
+.book:active,.book.active{
+  background-color:#8671bb;
+}
+
+
+.addmedia{
+  margin-right:35px;
+}
+.toggle{
+  border-style: solid;
+  border-width: 3px;
+}
+.blackborder{
+  border-color: black;
+}
+.noborder{
+  border-color: auto;
+}
+
