@@ -32,8 +32,11 @@
 <div class="row grid span8 col-md-12">
   <% @entertainment_items.each_with_index do |entertainment_item, index| %>
     <div  data-item-id=<%= "#{entertainment_item.id}" %>  class="well span2 tile <%= entertainment_item.entertainment_item_type.css_class %>">
-      <div><h3><span id="test<%= index + 1 %>" class="index"><%= index + 1 %></span><%= entertainment_item.name %></h3></div>
-      <div><%= entertainment_item.description %></div>
+      <h3><span class="index"><%= index + 1 %>.</span><%= entertainment_item.name %></h3>
+      <%= link_to new_entertainment_item_path, class: 'btn btn-success addmedia' do %>
+        <span class="glyphicon glyphicon-plus"></span> Details
+      <% end %>
+      <p class="description small ellipsis"><%= entertainment_item.description %></p>
     </div>
   <% end %>
 </div>

@@ -321,6 +321,7 @@ span.picture {
 
 h3 {
    margin-top:0px; 
+   display:inline
 }
 
 .videogame{
@@ -383,10 +384,14 @@ h3 {
   border-style: solid;
   border-width: 3px;
 }
-.blackborder{
+.blackborder, .blackborder:hover{
   border-color: black;
 }
-.noborder{
-  border-color: auto;
+.noborder, .noborder:hover{
+  border-color: white;
 }
 
+
+.well{
+  min-height:0px;
+}

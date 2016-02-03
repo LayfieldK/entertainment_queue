@@ -1,3 +1,9 @@
+$(document).ready(function() {
+	$(".tile .description").dotdotdot({
+		height  : 40
+	});
+});
+
 $(function() {
   $('.btn.toggle').click(function () {
     this.blur();
@@ -7,19 +13,19 @@ $(function() {
 $(function() {
   $('.toggle').click(function() {
     if ($(this).hasClass('movie')){
-      $('.tile.movie').toggle(1000);
+      $('.tile.movie').slideToggle(500);
     }
     if ($(this).hasClass('tv')){
-      $('.tile.tv').toggle(1000);
+      $('.tile.tv').slideToggle(500);
     }
     if ($(this).hasClass('music')){
-      $('.tile.music').toggle(1000);
+      $('.tile.music').slideToggle(500);
     }
     if ($(this).hasClass('videogame')){
-      $('.tile.videogame').toggle(1000);
+      $('.tile.videogame').slideToggle(500);
     }
     if ($(this).hasClass('book')){
-      $('.tile.book').toggle(1000);
+      $('.tile.book').slideToggle(500);
     }
     $(this).toggleClass('blackborder', 100, "easeOutSine");
     $(this).toggleClass('noborder', 100, "easeOutSine");
