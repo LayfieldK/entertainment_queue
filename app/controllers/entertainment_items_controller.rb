@@ -23,6 +23,15 @@ class EntertainmentItemsController < ApplicationController
   end
   
   def show
+    set_entertainment_item
+  end
+  
+  def destroy
+    set_entertainment_item
+  end
+  
+  def edit
+    set_entertainment_item
   end
   
   private

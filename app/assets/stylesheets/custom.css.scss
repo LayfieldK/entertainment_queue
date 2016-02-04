@@ -395,3 +395,17 @@ h3 {
 .well{
   min-height:0px;
 }
+
+.tile .buttonrow{
+  float: right; 
+  margin-top: -10px;
+  
+  .btn{
+    border-width: 2px;
+    border-color: black;
+  }
+}
+
+.description{
+  margin-top: 5px;
+}

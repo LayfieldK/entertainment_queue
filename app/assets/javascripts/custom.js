@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$(".tile .description").dotdotdot({
-		height  : 40
+		height  : 50
 	});
 });
 

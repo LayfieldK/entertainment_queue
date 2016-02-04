@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:entertainment_item, url: edit_entertainment_item_path) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :description %>
+      <%= f.text_area :description, class: 'form-control' %>
+      
+      <%= f.label :entertainment_item_type_id, class: "dropdown-menu" %>
+      <%= f.collection_select :entertainment_item_type_id, EntertainmentItemType.all, :id, :name %>
+      
+
+      <%= f.submit "Save changes to item", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</div>
