@@ -28,6 +28,9 @@ class EntertainmentItemsController < ApplicationController
   
   def destroy
     set_entertainment_item
+    @entertainment_item.destroy
+    
+    redirect_to controller: 'users', action: 'show', id: @entertainment_item.user
   end
   
   def edit
@@ -43,7 +46,7 @@ class EntertainmentItemsController < ApplicationController
       #if (params[:entertainment_item].has_key?(:entertainment_item_type_id))
       #  params[:entertainment_item][:entertainment_item_type] = EntertainmentItemType.find(params[:entertainment_item][:entertainment_item_type_id])
       #end
-      params.require(:entertainment_item).permit(:entertainment_item_id, :name, :description, :row_order_position, :entertainment_item_type_id, :user)
+      params.require(:entertainment_item).permit(:entertainment_item_id, :name, :description, :link, :row_order_position, :entertainment_item_type_id, :user)
       
    end
 end

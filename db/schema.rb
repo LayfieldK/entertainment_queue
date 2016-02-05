@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160127003001) do
+ActiveRecord::Schema.define(version: 20160205011742) do
 
   create_table "entertainment_item_types", force: :cascade do |t|
     t.string   "name"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160127003001) do
     t.integer  "user_id"
     t.integer  "entertainment_item_types_id"
     t.integer  "entertainment_item_type_id"
+    t.string   "link"
   end
 
   add_index "entertainment_items", ["entertainment_item_type_id"], name: "index_entertainment_items_on_entertainment_item_type_id"

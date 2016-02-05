@@ -50,6 +50,7 @@
           <span class="glyphicon glyphicon-plus"></span> Details
         <% end %>
       </span>
+      <p><%= link_to "Associated URL", "http://#{entertainment_item.link}", class: 'associated-url' %></p>
       <p class="description small ellipsis"><%= entertainment_item.description %></p>
     </div>
   <% end %>

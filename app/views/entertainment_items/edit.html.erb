@@ -8,7 +8,10 @@
       <%= f.label :description %>
       <%= f.text_area :description, class: 'form-control' %>
       
-      <%= f.label :entertainment_item_type_id, class: "dropdown-menu" %>
+      <%= f.label :link, 'Associated Link' %>
+      <%= f.text_field :link, clas: 'form-control' %>
+      
+      <%= f.label :entertainment_item_type, class: "dropdown-menu" %>
       <%= f.collection_select :entertainment_item_type_id, EntertainmentItemType.all, :id, :name %>
       
 
