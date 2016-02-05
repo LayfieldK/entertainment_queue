@@ -32,11 +32,11 @@
 <div class="row grid span8 col-md-12">
   <% @entertainment_items.each_with_index do |entertainment_item, index| %>
     <div  data-item-id=<%= "#{entertainment_item.id}" %>  class="well span2 tile <%= entertainment_item.entertainment_item_type.css_class %>">
-      <h3><span class="index"><%= index + 1 %>.</span><%= entertainment_item.name %></h3>
+      <h3><span class="index"><%= index + 1 %>. </span><%= entertainment_item.name %></h3>
       <span class="buttonrow">
         <% if current_user?(@user) %>
           <%= link_to entertainment_item_path(entertainment_item), :method => :delete, class: 'btn btn-success ' do %>
-            <span class="glyphicon glyphicon-ok"></span> Watched it!
+            <span class="glyphicon glyphicon-ok"></span> <%= entertainment_item.entertainment_item_type.consumed_phrase %>
           <% end %>
         <% end %>
         

@@ -5,6 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-entertainment_item_types = EntertainmentItemType.create([{name: 'Movie', css_class: 'movie'},{name: 'TV', css_class: 'tv'},{name: 'Book', css_class: 'book'},{name: 'Video Game', css_class: 'videogame'},{name: 'Music', css_class: 'music'}])
+entertainment_item_types = EntertainmentItemType.create([{name: 'Movie', css_class: 'movie', consumed_phrase: 'Watched it!'},{name: 'TV', css_class: 'tv', consumed_phrase: 'Watched it!'},{name: 'Book', css_class: 'book', consumed_phrase: 'Read it!'},{name: 'Video Game', css_class: 'videogame', consumed_phrase: 'Played it!'},{name: 'Music', css_class: 'music', consumed_phrase: 'Listened to it!'}])
 
 
