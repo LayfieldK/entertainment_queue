@@ -14,7 +14,7 @@
 <div class="row">
   <aside class="col-md-12">
     <section>
-      <% if current_user?(@user) %>
+      <% if logged_in? && current_user?(@user) %>
         <%= link_to new_entertainment_item_path, class: 'btn btn-success addmedia' do %>
           <span class="glyphicon glyphicon-plus"></span> Add Media
         <% end %>
@@ -29,26 +29,23 @@
   </aside>
 </div>
 
-<div class="row grid span8 col-md-12">
+<div class="row <%= "grid" if logged_in? && current_user?(@user) %> span8 col-md-12">
   <% @entertainment_items.each_with_index do |entertainment_item, index| %>
-    <div  data-item-id=<%= "#{entertainment_item.id}" %>  class="well span2 tile <%= entertainment_item.entertainment_item_type.css_class %>">
+    <div  data-item-id=<%= "#{entertainment_item.id}" %>  class="well span2 tile  <%= entertainment_item.entertainment_item_type.css_class %>">
       <h3><span class="index"><%= index + 1 %>. </span><%= entertainment_item.name %></h3>
       <span class="buttonrow">
-        <% if current_user?(@user) %>
+        <% if logged_in? && current_user?(@user) %>
           <%= link_to entertainment_item_path(entertainment_item), :method => :delete, class: 'btn btn-success ' do %>
             <span class="glyphicon glyphicon-ok"></span> <%= entertainment_item.entertainment_item_type.consumed_phrase %>
           <% end %>
         <% end %>
         
-        <% if current_user?(@user) %>
-          <%= link_to edit_entertainment_item_path(entertainment_item), class: 'btn btn-primary ' do %>
-            <span class="glyphicon glyphicon-pencil"></span> Edit
+        <% if  %>
+          <%= link_to logged_in? && current_user?(@user) ? edit_entertainment_item_path(entertainment_item) : entertainment_item_path(entertainment_item), class: 'btn btn-primary ' do %>
+            <span class="glyphicon glyphicon-pencil"></span> Details
           <% end %>
         <% end %>
-        
-        <%= link_to entertainment_item_path(entertainment_item), class: 'btn btn-info ' do %>
-          <span class="glyphicon glyphicon-plus"></span> Details
-        <% end %>
+
       </span>
       <p><%= link_to "Associated URL", "http://#{entertainment_item.link}", class: 'associated-url' %></p>
       <p class="description small ellipsis"><%= entertainment_item.description %></p>

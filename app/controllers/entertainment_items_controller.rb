@@ -1,6 +1,10 @@
 class EntertainmentItemsController < ApplicationController
   
+  before_action :logged_in_user, only: [:create, :destroy, :edit, :update_row_order]
+  before_action :correct_user,   only: [:destroy, :edit, :update_row_order]
+  
   def new
+    @entertainment_item = EntertainmentItem.new
     @entertainment_item_types = EntertainmentItemType.all
   end
   
@@ -8,7 +12,7 @@ class EntertainmentItemsController < ApplicationController
     @entertainment_item = EntertainmentItem.find(entertainment_item_params[:entertainment_item_id])
     @entertainment_item.row_order_position = entertainment_item_params[:row_order_position]
     @entertainment_item.save
-    
+
     render nothing: true # this is a POST action, updates sent via AJAX, no view rendered
   end
   
@@ -18,7 +22,7 @@ class EntertainmentItemsController < ApplicationController
       flash[:success] = "Item added!"
       redirect_to root_url
     else
-      redirect_to root_path
+      render 'new'
     end
   end
   
@@ -48,5 +52,10 @@ class EntertainmentItemsController < ApplicationController
       #end
       params.require(:entertainment_item).permit(:entertainment_item_id, :name, :description, :link, :row_order_position, :entertainment_item_type_id, :user)
       
-   end
+    end
+  
+    def correct_user
+      @entertainment_item = @current_user.entertainment_items.find_by(id: params[:id])
+      redirect_to root_url if @entertainment_item.nil?
+    end
 end
