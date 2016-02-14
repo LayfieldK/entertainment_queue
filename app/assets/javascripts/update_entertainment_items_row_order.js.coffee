@@ -23,7 +23,7 @@ jQuery ->
             type: 'POST'
             url: '/entertainment_items/update_row_order'
             dataType: 'json'
-            data: { entertainment_item: {entertainment_item_id: item_id, row_order_position: position } }
+            data: {id: item_id, entertainment_item: {entertainment_item_id: item_id, row_order_position: position } }
           )
     )
 
