@@ -16,7 +16,7 @@ jQuery ->
           # highlight the row on drop to indicate an update
           ui.item.effect('highlight', {color: '#beff95'}, 1000)
           $.map $(this).find('span.index'), (el, i) ->
-            $(el).text i+1
+            $(el).text (i+1) + ". "
           item_id = ui.item.data('item-id')
           position = ui.item.index() # this will not work with paginated items, as the index is zero on every page
           $.ajax(
