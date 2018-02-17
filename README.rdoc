@@ -1,28 +1,3 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+An old ruby on rails project I worked on to refresh myself on the language as well as work with some jQuery.  It allows you to add books, music, tv shows, or movies to a list. You can drag and drop these items to rank them in the order that you want to experience them.  You can also mark an item as watched or listened to or read to remove it from the list.  All database updates were handled by ajax handlers.
